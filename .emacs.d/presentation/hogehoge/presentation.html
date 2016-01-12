@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Emacs使ってできること</title>
+<meta name="author" content="(Sohei Hara)"/>
+
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="./local.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<meta name="description" content="Org-Reveal Introduction.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Emacs使ってできること</h1>
+<h2>Sohei Hara</h2>
+<h2><a href="mailto:hara_s@lapsys.co.jp">hara_s@lapsys.co.jp</a></h2>
+<h2></h2>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-sec-1">テキストエディタについて</a></li>
+<li><a href="#/slide-sec-2">Emacs-Evilを使おう</a></li>
+<li><a href="#/slide-sec-3">Org-modeを使おう</a></li>
+<li><a href="#/slide-sec-4">Orgモードからの出力</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-sec-1">
+<h2 id="sec-1">テキストエディタについて</h2>
+<div class="outline-text-2" id="text-1">
+</div></section>
+</section>
+<section>
+<section id="slide-sec-1-1">
+<h3 id="sec-1-1">テキストエディタはたくさんある</h3>
+<ul>
+<li>Vim</li>
+<li>Emacs</li>
+<li>Atom</li>
+
+</ul>
+
+<p>
+とかとか
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-1-2">
+<h3 id="sec-1-2">お気に入りを見つける</h3>
+<p>
+自分でカスタマイズできるものがおおい
+</p>
+
+<p>
+カスタマイズしていくうちに自分専用機みたいになって楽しい
+</p>
+
+<p>
+慣れるまで多少無理する必要があるけど
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-1-3">
+<h3 id="sec-1-3">何を選択すれば？</h3>
+<p>
+いろいろ種類あるし
+</p>
+
+<p>
+好きなの使って
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-1-4">
+<h3 id="sec-1-4">原のおすすめは？</h3>
+<p>
+ベテランさんはVimかEmacsあたりに慣れてしまっていて他のエディタには
+もう乗り換えられないだろう
+</p>
+
+<p>
+でも我々初心者はまだまだ慣れているエディタがない
+</p>
+<span class="fragment roll-in"><p>
+そんなあなたに <b>Emacs-Evil</b> という選択肢
+</p></span>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-2">
+<h2 id="sec-2">Emacs-Evilを使おう</h2>
+<div class="outline-text-2" id="text-2">
+</div></section>
+</section>
+<section>
+<section id="slide-sec-2-1">
+<h3 id="sec-2-1">Emacs-Evilとは</h3>
+<p>
+Emacs使いながら入力時の動作はVimっぽい動きができるようになるjEmacsの拡張
+</p>
+
+<span class="fragment roll-in"><p>
+でも&#x2026;
+</p></span>
+
+<span class="fragment roll-in"><p>
+今回の本筋じゃないからこの話はここで終了
+</p></span>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-3">
+<h2 id="sec-3">Org-modeを使おう</h2>
+<div class="outline-text-2" id="text-3">
+</div></section>
+</section>
+<section>
+<section id="slide-sec-3-1">
+<h3 id="sec-3-1">Org-modeとは？</h3>
+<p>
+Emacsには <b>Org-mode</b> という文書作成支援モードがある
+</p>
+
+<p>
+標準でHTMLやLatexフォーマットの文書が作成できる
+</p>
+
+<p>
+他にも拡張でodt形式にも出力できる
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-3-2">
+<h3 id="sec-3-2">必要なものは？</h3>
+<p>
+Emacs使って拡張子がorgのファイルを開けばいい
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-3-3">
+<h3 id="sec-3-3">Org-modeを使うには</h3>
+<p>
+まだまだ使いこなせてないし偉そうなこと言えないけど
+</p>
+
+<p>
+とりあえず日々の業務で役に立つものをいくつか紹介
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-3-4">
+<h3 id="sec-3-4">まず書式</h3>
+<div class="outline-text-3" id="text-3-4">
+</div></section>
+<section id="slide-sec-3-4-1">
+<h4 id="sec-3-4-1">見出し</h4>
+<div class="org-src-container">
+
+<pre  class="src src-org">「*」を使います
+</pre>
+</div>
+
+</section>
+<section id="slide-sec-3-4-2">
+<h4 id="sec-3-4-2">箇条書き</h4>
+<div class="org-src-container">
+
+<pre  class="src src-org">1. 番号付き
+  - 番号なし
+  - 番号なし
+2. 番号付き
+3. 番号付き
+</pre>
+</div>
+
+</section>
+<section id="slide-sec-3-4-3">
+<h4 id="sec-3-4-3">こうなる</h4>
+<ol>
+<li>番号付き
+<ul>
+<li>番号なし</li>
+<li>番号なし</li>
+
+</ul></li>
+<li>番号付き</li>
+<li>番号付き</li>
+
+</ol>
+
+</section>
+<section id="slide-sec-3-4-4">
+<h4 id="sec-3-4-4">画像</h4>
+<div class="org-src-container">
+
+<pre  class="src src-org">[[./image/sample.png]]
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="./image/sample.jpg" alt="sample.jpg" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-3-4-5">
+<h4 id="sec-3-4-5">リンク</h4>
+<div class="org-src-container">
+
+<pre  class="src src-org">[[リンク元][表示名]]
+</pre>
+</div>
+
+<p>
+<a href="https://www.google.co.jp">google</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-3-5">
+<h3 id="sec-3-5">キーバインド</h3>
+<div class="outline-text-3" id="text-3-5">
+</div></section>
+<section id="slide-sec-3-5-1">
+<h4 id="sec-3-5-1">C-REC</h4>
+<p>
+Ctrl押しながらEnterを押すと見出しを作ってくれる
+</p>
+
+</section>
+<section id="slide-sec-3-5-2">
+<h4 id="sec-3-5-2">M-REC</h4>
+<p>
+Alt押しながらEnter押すと見出しか項目を作ってくれる
+</p>
+
+</section>
+<section id="slide-sec-3-5-3">
+<h4 id="sec-3-5-3">M-LEFT or RIGHT</h4>
+<p>
+見出しや項目の階層の上げ下げ
+</p>
+
+</section>
+<section id="slide-sec-3-5-4">
+<h4 id="sec-3-5-4">C-c -</h4>
+<p>
+見出しを箇条書きに変えてくれる
+</p>
+
+<p>
+全角のまま箇条書き作れて便利
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-4">
+<h2 id="sec-4">Orgモードからの出力</h2>
+</section>
+</section>
+</div>
+</div>
+<p> Created by yjwen. </p>
+
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+</body>
+</html>

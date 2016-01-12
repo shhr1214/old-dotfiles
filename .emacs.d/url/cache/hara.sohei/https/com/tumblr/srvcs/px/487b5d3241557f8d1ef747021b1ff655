@@ -1,0 +1,4 @@
+closed
+ done
+depth=1 C = US, O = GeoTrust Inc., CN = GeoTrust SSL CA - G3
+verify error:num=20:unable to get local issuer certificate

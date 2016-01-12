@@ -1,0 +1,5 @@
+(:name LazyCatFont
+:auto-generated t
+:type emacswiki
+:description "字体设置 "
+:website "https://raw.github.com/emacsmirror/emacswiki.org/master/LazyCatFont.el")

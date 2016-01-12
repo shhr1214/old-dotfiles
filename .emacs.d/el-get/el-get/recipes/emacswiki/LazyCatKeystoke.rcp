@@ -1,0 +1,5 @@
+(:name LazyCatKeystoke
+:auto-generated t
+:type emacswiki
+:description "按键设置"
+:website "https://raw.github.com/emacsmirror/emacswiki.org/master/LazyCatKeystoke.el")

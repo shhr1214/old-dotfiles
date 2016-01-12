@@ -1,0 +1,147 @@
+#+Title: Emacs使ってできること
+#+Author: Sohei Hara
+#+Email: hara_s@lapsys.co.jp
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: toc:1
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: cube
+#+REVEAL_THEME: moon
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
+#+REVEAL_POSTAMBLE: <p> Created by yjwen. </p>
+#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_EXTRA_CSS: ./local.css
+
+* テキストエディタについて
+
+** テキストエディタはたくさんある
+
+  - Vim
+  - Emacs
+  - Atom
+ 
+  とかとか
+
+** お気に入りを見つける
+
+  自分でカスタマイズできるものがおおい
+
+  カスタマイズしていくうちに自分専用機みたいになって楽しい
+
+  慣れるまで多少無理する必要があるけど
+
+** 何を選択すれば？
+
+  いろいろ種類あるし
+
+  好きなの使って
+
+** 原のおすすめは？
+
+  ベテランさんはVimかEmacsあたりに慣れてしまっていて他のエディタには
+  もう乗り換えられないだろう
+
+  でも我々初心者はまだまだ慣れているエディタがない
+#+ATTR_REVEAL: :frag roll-in
+  そんなあなたに *Emacs-Evil* という選択肢
+
+* Emacs-Evilを使おう
+
+** Emacs-Evilとは
+   
+  Emacs使いながら入力時の動作はVimっぽい動きができるようになるEmacsの拡張
+
+#+ATTR_REVEAL: :frag roll-in
+  でも...
+
+#+ATTR_REVEAL: :frag roll-in
+  今回の本筋じゃないからこの話はここで終了
+
+* Org-modeを使おう
+
+** Org-modeとは？
+
+  Emacsには *Org-mode* という文書作成支援モードがある
+
+  標準でHTMLやLatexフォーマットの文書が作成できる
+
+  他にも拡張でodt形式にも出力できる
+
+** 必要なものは？
+
+  Emacs使って拡張子がorgのファイルを開けばいい
+  
+** Org-modeを使うには
+
+  まだまだ使いこなせてないし偉そうなこと言えないけど
+
+  とりあえず日々の業務で役に立つものをいくつか紹介
+  
+** まず書式
+   
+*** 見出し
+#+BEGIN_SRC org
+  「*」を使います
+#+END_SRC
+
+*** 箇条書き
+
+#+BEGIN_SRC org
+  1. 番号付き
+    - 番号なし
+    - 番号なし
+  2. 番号付き
+  3. 番号付き
+#+END_SRC
+
+*** こうなる
+
+  1. 番号付き
+     - 番号なし
+     - 番号なし
+  2. 番号付き
+  3. 番号付き
+
+*** 画像
+
+#+BEGIN_SRC org
+  [[./image/sample.png]]
+#+END_SRC
+
+[[./image/sample.jpg]]
+
+*** リンク
+
+#+BEGIN_SRC org
+  [[リンク元][表示名]]
+#+END_SRC
+
+  [[https://www.google.co.jp][google]]
+
+** キーバインド
+
+*** C-REC
+
+  Ctrl押しながらEnterを押すと見出しを作ってくれる
+
+*** M-REC
+
+  Alt押しながらEnter押すと見出しか項目を作ってくれる
+
+*** M-LEFT or RIGHT
+
+  見出しや項目の階層の上げ下げ
+
+*** C-c -
+
+  見出しを箇条書きに変えてくれる
+
+  全角のまま箇条書き作れて便利
+
+* Orgモードからの出力
+
