@@ -26,6 +26,8 @@ values."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
+     python
+     ruby
      ;; git
      ;; markdown
      ;; org
