@@ -119,3 +119,8 @@ alias sshsvn='ssh -i ~/.ssh/hara_s -l hara_s 192.168.1.43'
 PYENV_ROOT=$HOME/.pyenv
 PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
+
+# rbenv
+RBENV_ROOT=$HOME/.rbenv
+PATH=$RBENV_ROOT/bin:$PATH
+eval "$(rbenv init -)"
