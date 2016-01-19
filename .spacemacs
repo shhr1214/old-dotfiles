@@ -25,10 +25,11 @@ values."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
-     emacs-lisp
      clojure
+     emacs-lisp
      python
-     ruby
+     '((ruby :valiables
+           ruby-enable-enh-ruby-mode t))
      ;; git
      ;; markdown
      ;; org
