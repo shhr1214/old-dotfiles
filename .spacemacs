@@ -31,14 +31,15 @@ values."
      (ruby :valiables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv)
+     scala
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      yaml
      ;; better-defaults
      ;; git
      ;; markdown
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
