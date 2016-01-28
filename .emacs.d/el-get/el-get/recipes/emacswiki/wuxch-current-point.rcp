@@ -1,5 +1,0 @@
-(:name wuxch-current-point
-:auto-generated t
-:type emacswiki
-:description "display information of current point"
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/wuxch-current-point.el")

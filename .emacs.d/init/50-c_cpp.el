@@ -1,2 +1,0 @@
-;; enable Flymake
-; (require 'flymake)

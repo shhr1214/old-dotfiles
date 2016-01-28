@@ -1,5 +1,0 @@
-(:name hexrgb-extension
-:auto-generated t
-:type emacswiki
-:description "Extension for hexrgb"
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/hexrgb-extension.el")

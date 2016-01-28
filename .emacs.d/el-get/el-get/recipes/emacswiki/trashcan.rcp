@@ -1,5 +1,0 @@
-(:name trashcan
-:auto-generated t
-:type emacswiki
-:description "DeletedPage"
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/trashcan.el")

@@ -1,16 +1,0 @@
-;; Emacs-W3 HTTP cookies file
-;; Automatically generated file!!! DO NOT EDIT!!!
-
-(setq url-cookie-storage
- '((".google.co.jp"
-  [url-cookie "PREF" "ID=1111111111111111:FF=0:TM=1444261885:LM=1444261885:V=1:S=n6d3oJb7rj3aJuXf" "31-Dec-2015 16:02:17.00 GMT" "/" ".google.co.jp" nil]
-  [url-cookie "NID" "72=qsG2Zgzx4rAD8aGqNIANWQ2FagP3RucGJPtDWAtruiqot1_SBrsgaAqcKUkDWfhnOU8X9lqwaCz8quAD0vEifl-cAi6I1AQsF25fD8ohIrY1raFOoI436Wr4An0fN3ibO2jGpto" "07-Apr-2016 23:51:25.00 GMT" "/" ".google.co.jp" nil]
-  [url-cookie "HttpOnly" nil "07-Apr-2016 23:51:25.00 GMT" "/" ".google.co.jp" nil]))
-)
-(setq url-cookie-secure-storage
- 'nil)
-
-;; Local Variables:
-;; version-control: never
-;; no-byte-compile: t
-;; End:

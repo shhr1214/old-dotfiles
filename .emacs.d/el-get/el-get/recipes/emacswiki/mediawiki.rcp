@@ -1,5 +1,0 @@
-(:name mediawiki
-:auto-generated t
-:type emacswiki
-:description "See https://launchpad.net/mediawiki-el/+download to download the latest version."
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/mediawiki.el")

@@ -1,5 +1,0 @@
-(:name ddg
-:auto-generated t
-:type emacswiki
-:description "DuckDuckGo API for ELisp. "
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/ddg.el")

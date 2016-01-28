@@ -1,5 +1,0 @@
-(:name bracketed-paste
-:auto-generated t
-:type emacswiki
-:description "bracketed paste mode support within emacs -nw"
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/bracketed-paste.el")

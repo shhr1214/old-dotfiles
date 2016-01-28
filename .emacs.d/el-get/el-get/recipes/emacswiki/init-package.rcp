@@ -1,5 +1,0 @@
-(:name init-package
-:auto-generated t
-:type emacswiki
-:description "Init package"
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/init-package.el")

@@ -1,5 +1,0 @@
-(:name init-helm
-:auto-generated t
-:type emacswiki
-:description "Init helm"
-:website "https://raw.github.com/emacsmirror/emacswiki.org/master/init-helm.el")
