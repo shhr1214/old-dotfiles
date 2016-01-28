@@ -113,7 +113,10 @@ alias maxwell120='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.120'
 alias maxwell220='ssh -i ~/.ssh/hara_s -l hara_s 192.168.3.220'
 alias maxwell221='ssh -i ~/.ssh/hara_s -l laplace 192.168.3.221'
 alias redmine='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.40'
+alias sakura='ssh -i ~/.ssh/hara_s -l lapsys lapsys.sakura.ne.jp'
 alias sshsvn='ssh -i ~/.ssh/hara_s -l hara_s 192.168.1.43'
+
+alias ls='ls -l'
 
 # pyenv
 PYENV_ROOT=$HOME/.pyenv
