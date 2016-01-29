@@ -26,6 +26,7 @@ values."
      auto-completion
      clojure
      emacs-lisp
+     go
      org
      python
      (ruby :valiables
