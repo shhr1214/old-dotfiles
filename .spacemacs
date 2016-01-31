@@ -260,6 +260,8 @@ layers configuration. You are free to put any user code."
   (global-set-key (kbd "<F1>") help-map)
   )
 
+  (setq powerline-default-separator 'box)
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 
