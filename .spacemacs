@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      clojure
+     dockerfile
      emacs-lisp
      go
      org
