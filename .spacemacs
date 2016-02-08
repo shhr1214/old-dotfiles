@@ -259,9 +259,9 @@ layers configuration. You are free to put any user code."
   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
   (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
-  )
 
   (setq powerline-default-separator 'box)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
