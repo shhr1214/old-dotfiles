@@ -26,6 +26,7 @@ values."
      auto-completion
      clojure
      dockerfile
+     elixir
      emacs-lisp
      go
      org
@@ -37,6 +38,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     sql
      yaml
      ;; better-defaults
      ;; git
@@ -108,9 +110,9 @@ values."
    dotspacemacs-themes '(monokai
                          spacemacs-dark
                          spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
+                         ;; solarized-light
+                         ;; solarized-dark
+                         ;; leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -256,7 +258,11 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (require 'key-chord)
   (key-chord-mode 1)
+  (setq key-chord-two-keys-delay 1.0)
   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+  (key-chord-define evil-replace-state-map "jj" 'evil-normal-state)
+
+  ;;type ctrl-h to del
   (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
 
