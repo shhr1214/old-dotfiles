@@ -104,11 +104,14 @@ setopt extended_glob
 # ログイン時にtmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
+TERM="xterm-256color"
+
 # path
 path=($HOME/bin(N-/) /usr/local/bin(N-/) $path)
 
 # alias
-alias maxwell41='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.41'
+alias freebsd='ssh -i ~/.ssh/hara_s -l hara_s 192.168.1.108'
+alias gitbucket='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.11'
 alias maxwell120='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.120'
 alias maxwell220='ssh -i ~/.ssh/hara_s -l hara_s 192.168.3.220'
 alias maxwell221='ssh -i ~/.ssh/hara_s -l laplace 192.168.3.221'
@@ -128,3 +131,7 @@ RBENV_ROOT=$HOME/.rbenv
 PATH=$RBENV_ROOT/bin:$PATH
 eval "$(rbenv init -)"
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/hara_s/.sdkman"
+[[ -s "/home/hara_s/.sdkman/bin/sdkman-init.sh" ]] && source "/home/hara_s/.sdkman/bin/sdkman-init.sh"
