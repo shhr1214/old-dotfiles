@@ -28,12 +28,15 @@ values."
      dockerfile
      elixir
      emacs-lisp
+     ;; git
      go
+     markdown
      org
      python
      (ruby :valiables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv)
+     rust
      scala
      (shell :variables
             shell-default-height 30
@@ -41,9 +44,6 @@ values."
      sql
      yaml
      ;; better-defaults
-     ;; git
-     ;; markdown
-     ;; org
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
@@ -271,5 +271,3 @@ layers configuration. You are free to put any user code."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-
-
