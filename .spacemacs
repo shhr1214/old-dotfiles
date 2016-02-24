@@ -30,6 +30,7 @@ values."
      emacs-lisp
      ;; git
      go
+     html
      markdown
      org
      python
