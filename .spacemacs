@@ -257,12 +257,6 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (require 'key-chord)
-  (key-chord-mode 1)
-  (setq key-chord-two-keys-delay 1.0)
-  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-  (key-chord-define evil-replace-state-map "jj" 'evil-normal-state)
-
   ;;type ctrl-h to del
   (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
