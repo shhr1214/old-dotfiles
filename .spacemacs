@@ -104,7 +104,7 @@ values."
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'lisp-interaction-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -268,6 +268,8 @@ layers configuration. You are free to put any user code."
   (global-set-key (kbd "<F1>") help-map)
 
   (setq powerline-default-separator 'box)
+
+  (setq org-bullets-bullet-list '("*" "**" "***" "****"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
