@@ -53,7 +53,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(key-chord)
+   dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -258,7 +258,7 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   ;;type ctrl-h to del
-  (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
+  (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
 
   (setq powerline-default-separator 'box)

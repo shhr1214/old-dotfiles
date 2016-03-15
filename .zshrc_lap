@@ -119,7 +119,7 @@ alias redmine='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.40'
 alias sakura='ssh -i ~/.ssh/hara_s -l lapsys lapsys.sakura.ne.jp'
 alias sshsvn='ssh -i ~/.ssh/hara_s -l hara_s 192.168.1.43'
 
-alias psql120='psql -h 172.16.129.120 -U lap_rom laplace'
+alias psql120='psql -h 192.168.129.120 -U lap_rom laplace'
 alias psql220='psql -h 192.168.3.220 -U lap_rom laplace'
 
 alias ls='ls -l'
