@@ -134,6 +134,10 @@ RBENV_ROOT=$HOME/.rbenv
 PATH=$RBENV_ROOT/bin:$PATH
 eval "$(rbenv init -)"
 
+# pandoc
+STASH_PATH=$HOME/.local
+PATH=$STASH_PATH/bin:$PATH
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/hara_s/.sdkman"
