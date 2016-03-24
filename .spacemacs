@@ -32,6 +32,7 @@ values."
      go
      html
      markdown
+     ocaml
      org
      python
      (ruby :valiables
