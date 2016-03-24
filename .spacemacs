@@ -32,6 +32,7 @@ values."
      go
      html
      markdown
+     ocaml
      org
      python
      (ruby :valiables
@@ -260,7 +261,7 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   ;;type ctrl-h to del
-  ;;(define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
+  (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
 
   (setq powerline-default-separator 'box)
