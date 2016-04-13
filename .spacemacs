@@ -34,6 +34,7 @@ values."
      markdown
      ocaml
      org
+     pandoc
      python
      (ruby :valiables
            ruby-enable-enh-ruby-mode t
