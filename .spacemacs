@@ -29,7 +29,7 @@ values."
      elixir
      emacs-lisp
      ;; git
-     go
+     ;; go
      html
      markdown
      ocaml
