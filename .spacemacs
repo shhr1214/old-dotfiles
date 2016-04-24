@@ -33,6 +33,7 @@ values."
      ;; git
      ;; go
      html
+     javascript
      markdown
      ocaml
      org
@@ -267,6 +268,16 @@ layers configuration. You are free to put any user code."
   (display-time-mode t)
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
+
+  ;; javascript-mode
+  (setq-default
+   css-indent-offset 2
+   js2-basic-offset 2
+   js-indent-level 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   )
 
   (setq powerline-default-separator 'box)
 
