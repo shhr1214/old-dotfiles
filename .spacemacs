@@ -23,7 +23,9 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t)
      clojure
      dockerfile
      elixir
@@ -31,6 +33,7 @@ values."
      ;; git
      ;; go
      html
+     javascript
      markdown
      ocaml
      org
@@ -94,7 +97,7 @@ values."
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
-   ;; banner, `random' chooses a random text banner in `core/banners'
+   ;; banner, `random' chooses a random text banner in`core/banners'
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
@@ -124,8 +127,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Ricty Regular for Powerline"
-                               :size 13
+   dotspacemacs-default-font '("Ricty Discord for Powerline"
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -147,11 +150,10 @@ values."
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
-   ;; (Not implemented) dotspacemacs-distinguish-gui-ret nil
-   ;; The command key used for Evil commands (ex-commands) and
-   ;; Emacs commands (M-x).
-   ;; By default the command key is `:' so ex-commands are executed like in Vim
-   ;; with `:' and Emacs commands are executed with `<leader> :'.
+   ;; (Not implemented) dotspacemacs-distinguish-gui-ret nil The command key
+   ;; used for Evil commands (ex-commands) and Emacs commands (M-x). By default
+   ;; the command key is `:' so ex-commands are executed like in Vim with `:'
+   ;; and Emacs commands are executed with `<leader> :'.
    dotspacemacs-command-key ":"
    ;; If non nil `Y' is remapped to `y$'. (default t)
    dotspacemacs-remap-Y-to-y$ t
@@ -266,6 +268,16 @@ layers configuration. You are free to put any user code."
   (display-time-mode t)
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
+
+  ;; javascript-mode
+  (setq-default
+   css-indent-offset 2
+   js2-basic-offset 2
+   js-indent-level 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   )
 
   (setq powerline-default-separator 'box)
 
