@@ -31,7 +31,6 @@ values."
      elixir
      emacs-lisp
      ;; git
-     ;; go
      html
      javascript
      markdown
@@ -50,10 +49,6 @@ values."
             shell-default-position 'bottom)
      sql
      yaml
-     ;; better-defaults
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -229,7 +224,8 @@ values."
    dotspacemacs-line-numbers nil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   ;; dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -264,10 +260,33 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  ;;type ctrl-h to del
-  (display-time-mode t)
+
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
+
+  (define-key evil-insert-state-map (kbd "C-M-a") 'sp-beginning-of-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-e") 'sp-end-of-sexp)
+  (define-key evil-insert-state-map (kbd "C-<down>") 'sp-down-sexp)
+  (define-key evil-insert-state-map (kbd "C-<up>") 'sp-up-sexp)
+  (define-key evil-insert-state-map (kbd "M-<down>") 'sp-backward-down-sexp)
+  (define-key evil-insert-state-map (kbd "M-<up>") 'sp-backward-up-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-f") 'sp-forward-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-b") 'sp-backward-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-n") 'sp-next-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-p") 'sp-previous-sexp)
+  (define-key evil-insert-state-map (kbd "M-[") 'sp-backward-unwrap-sexp)
+  (define-key evil-insert-state-map (kbd "M-]") 'sp-unwrap-sexp)
+  (define-key evil-insert-state-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
+  (define-key evil-insert-state-map (kbd "M-<right>") 'sp-forward-barf-sexp)
+  (define-key evil-insert-state-map (kbd "C-<left>") 'sp-backward-slurp-sexp)
+  (define-key evil-insert-state-map (kbd "M-<left>") 'sp-backward-barf-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-t") 'sp-transpose-sexp)
+  (define-key evil-insert-state-map (kbd "C-M-k") 'sp-kill-sexp)
+  (define-key evil-insert-state-map (kbd "C-k") 'sp-kill-hybrid-sexp)
+  (define-key evil-insert-state-map (kbd "M-k") 'sp-backward-kill-sexp)
+
+  (display-time-mode t)
+  (setq powerline-default-separator 'box)
 
   ;; javascript-mode
   (setq-default
@@ -278,8 +297,6 @@ layers configuration. You are free to put any user code."
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    )
-
-  (setq powerline-default-separator 'box)
 
   (setq org-bullets-bullet-list '("*" "**" "***" "****"))
   )
