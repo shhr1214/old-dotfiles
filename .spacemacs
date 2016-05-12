@@ -25,7 +25,8 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip t)
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-tab-key-behavior 'cycle)
      clojure
      dockerfile
      elixir
@@ -48,6 +49,7 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      sql
+     syntax-checking
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -265,20 +267,20 @@ layers configuration. You are free to put any user code."
 
   (define-key evil-insert-state-map (kbd "C-M-a") 'sp-beginning-of-sexp)
   (define-key evil-insert-state-map (kbd "C-M-e") 'sp-end-of-sexp)
-  (define-key evil-insert-state-map (kbd "C-<down>") 'sp-down-sexp)
-  (define-key evil-insert-state-map (kbd "C-<up>") 'sp-up-sexp)
-  (define-key evil-insert-state-map (kbd "M-<down>") 'sp-backward-down-sexp)
-  (define-key evil-insert-state-map (kbd "M-<up>") 'sp-backward-up-sexp)
+  (define-key evil-insert-state-map (kbd "C-d") 'sp-down-sexp)
+  (define-key evil-insert-state-map (kbd "C-u") 'sp-up-sexp)
+  (define-key evil-insert-state-map (kbd "M-d") 'sp-backward-down-sexp)
+  (define-key evil-insert-state-map (kbd "M-u") 'sp-backward-up-sexp)
   (define-key evil-insert-state-map (kbd "C-M-f") 'sp-forward-sexp)
   (define-key evil-insert-state-map (kbd "C-M-b") 'sp-backward-sexp)
   (define-key evil-insert-state-map (kbd "C-M-n") 'sp-next-sexp)
   (define-key evil-insert-state-map (kbd "C-M-p") 'sp-previous-sexp)
   (define-key evil-insert-state-map (kbd "M-[") 'sp-backward-unwrap-sexp)
   (define-key evil-insert-state-map (kbd "M-]") 'sp-unwrap-sexp)
-  (define-key evil-insert-state-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
-  (define-key evil-insert-state-map (kbd "M-<right>") 'sp-forward-barf-sexp)
-  (define-key evil-insert-state-map (kbd "C-<left>") 'sp-backward-slurp-sexp)
-  (define-key evil-insert-state-map (kbd "M-<left>") 'sp-backward-barf-sexp)
+  (define-key evil-insert-state-map (kbd "C-r") 'sp-forward-slurp-sexp)
+  (define-key evil-insert-state-map (kbd "M-r") 'sp-forward-barf-sexp)
+  (define-key evil-insert-state-map (kbd "C-l") 'sp-backward-slurp-sexp)
+  (define-key evil-insert-state-map (kbd "M-l") 'sp-backward-barf-sexp)
   (define-key evil-insert-state-map (kbd "C-M-t") 'sp-transpose-sexp)
   (define-key evil-insert-state-map (kbd "C-M-k") 'sp-kill-sexp)
   (define-key evil-insert-state-map (kbd "C-k") 'sp-kill-hybrid-sexp)
@@ -286,6 +288,8 @@ layers configuration. You are free to put any user code."
 
   (display-time-mode t)
   (setq powerline-default-separator 'box)
+
+  ;; java-mode
 
   ;; javascript-mode
   (setq-default
