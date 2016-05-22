@@ -103,6 +103,8 @@ alias centos='ssh -l hara_s 192.168.1.112'
 
 alias ls='ls -l'
 
+PATH=~/.local/bin:$PATH
+
 # pyenv
 PYENV_ROOT=$HOME/.pyenv
 PATH=$PYENV_ROOT/bin:$PATH
