@@ -1,3 +1,9 @@
+# login and start up tmux
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
+# path
+path=($HOME/bin(N-/) /usr/local/bin(N-/) $path)
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/Souhei/.oh-my-zsh
 
@@ -6,7 +12,7 @@ export ZSH=/Users/Souhei/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="dallas"
+ZSH_THEME="mikeh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +60,6 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/Souhei/.pyenv/shims:/Users/Souhei/.pyenv/bin:/Users/Souhei/.rbenv/shims:/usr/bin/ghc:/Users/Souhei/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/gosh:/Users/Souhei/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,38 +89,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH="Users/Souhei/bin:/opt/X11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:"/Users/Souhei/.pyenv/shims:/Users/Souhei/.pyenv/bin:/Users/Souhei/.rbenv/shims"
+export PATH=$PATH:"/usr/bin/ghc:/Users/Souhei/.cabal/bin:/usr/local/bin/gosh"
 
-# login and start up tmux
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
-
-# path
-path=($HOME/bin(N-/) /usr/local/bin(N-/) $path)
-
-# alias
-alias maxwell41='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.41'
-alias maxwell120='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.120'
-alias maxwell220='ssh -i ~/.ssh/hara_s -l hara_s 192.168.3.220'
-alias maxwell221='ssh -i ~/.ssh/hara_s -l laplace 192.168.3.221'
-alias redmine='ssh -i ~/.ssh/hara_s -l hara_s 192.168.129.40'
-alias sakura='ssh -i ~/.ssh/hara_s -l lapsys lapsys.sakura.ne.jp'
-alias sshsvn='ssh -i ~/.ssh/hara_s -l hara_s 192.168.1.43'
-alias centos='ssh -l hara_s 192.168.1.112'
-
-alias ls='ls -l'
-
-PATH=~/.local/bin:$PATH
-
-# pyenv
-PYENV_ROOT=$HOME/.pyenv
-PATH=$PYENV_ROOT/bin:$PATH
+# **env
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH=${PYENV_ROOT}/bin:$PATH
 eval "$(pyenv init -)"
 
-# rbenv
-RBENV_ROOT=$HOME/.rbenv
-PATH=$RBENV_ROOT/bin:$PATH
+export RBENV_ROOT="${HOME}/.rbenv"
+export PATH=${RBENV_ROOT}/bin:$PATH
 eval "$(rbenv init -)"
 
-# plenv
-PLENV_ROOT=$HOME/.plenv
-PATH=$PLENV_ROOT/bin:$PATH
-eval "$(plenv init -)"
+export BOOT_EMIT_TARGET=no
+
+export NVM_DIR="/Users/Souhei/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+npm_dir=${NVM_PATH}_modules
+export NODE_PATH=$npm_dir
+
+eval `opam config env`
+alias ocaml="rlwrap ocaml"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/Souhei/.sdkman"
+[[ -s "/Users/Souhei/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Souhei/.sdkman/bin/sdkman-init.sh"
