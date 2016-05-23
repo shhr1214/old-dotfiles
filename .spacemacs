@@ -50,6 +50,7 @@ values."
             shell-default-position 'bottom)
      sql
      syntax-checking
+     theme-megapack
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -299,6 +300,7 @@ layers configuration. You are free to put any user code."
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
    )
 
   (setq org-bullets-bullet-list '("*" "**" "***" "****"))
