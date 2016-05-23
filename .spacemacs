@@ -32,6 +32,7 @@ values."
      elixir
      emacs-lisp
      ;; git
+     haskell
      html
      javascript
      markdown
