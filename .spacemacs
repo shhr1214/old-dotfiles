@@ -51,7 +51,6 @@ values."
             shell-default-position 'bottom)
      sql
      syntax-checking
-     theme-megapack
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -128,9 +127,9 @@ values."
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Ricty Discord for Powerline"
                                :size 15
-                               :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :weight normal
+                               :powerline-scale 1.2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -257,6 +256,8 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  ;; rust
+  (setq-default rust-enable-racer t)
   )
 
 (defun dotspacemacs/user-config ()

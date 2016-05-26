@@ -89,9 +89,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="Users/Souhei/bin:/opt/X11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="Users/Souhei/bin:/opt/X11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Souhei/.local/bin"
 export PATH=$PATH:"/Users/Souhei/.pyenv/shims:/Users/Souhei/.pyenv/bin:/Users/Souhei/.rbenv/shims"
 export PATH=$PATH:"/usr/bin/ghc:/Users/Souhei/.cabal/bin:/usr/local/bin/gosh"
+export PATH=$PATH:"/Users/Souhei/.multirust/toolchains/stable/cargo/bin"
+export RUST_SRC_PATH=/Users/Souhei/tools/rustc-1.8.0/src
 
 # **env
 export PYENV_ROOT="${HOME}/.pyenv"
