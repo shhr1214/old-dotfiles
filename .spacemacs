@@ -46,6 +46,7 @@ values."
      rust
      (scala :variables
             scala-auto-insert-asterisk-in-comments t)
+     scheme
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -264,9 +265,10 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
+
+  (setq-default xterm-mouse-mode 0)
 
   (define-key evil-insert-state-map (kbd "C-M-a") 'sp-beginning-of-sexp)
   (define-key evil-insert-state-map (kbd "C-M-e") 'sp-end-of-sexp)
@@ -291,8 +293,6 @@ layers configuration. You are free to put any user code."
 
   (display-time-mode t)
   (setq powerline-default-separator 'box)
-
-  ;; java-mode
 
   ;; javascript-mode
   (setq-default
