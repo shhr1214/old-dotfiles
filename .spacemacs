@@ -31,7 +31,8 @@ values."
      dockerfile
      elixir
      emacs-lisp
-     ;; git
+     golang
+     git
      haskell
      html
      javascript
@@ -126,11 +127,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Ricty Discord for Powerline"
-                               :size 15
+   dotspacemacs-default-font '("Ricty for Powerline"
+                               :size 14
                                :width normal
                                :weight normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 1.3)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -265,6 +266,8 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (set-language-environment "Japanese")
+
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
 
