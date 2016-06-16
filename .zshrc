@@ -1,5 +1,5 @@
 # login and start up tmux
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # path
 path=($HOME/bin(N-/) /usr/local/bin(N-/) $path)
