@@ -267,6 +267,11 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (set-language-environment "Japanese")
+  (setq initial-frame-alist
+        (append (list
+                 '(width . 120)
+                 '(height . 40))
+                initial-frame-alist))
 
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
