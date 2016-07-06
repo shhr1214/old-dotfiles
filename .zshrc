@@ -1,119 +1,81 @@
-# login and start up tmux
-# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+source ~/.zplug/init.zsh
 
-# path
-path=($HOME/bin(N-/) /usr/local/bin(N-/) $path)
+# Make sure to use double quotes
+zplug "zsh-users/zsh-history-substring-search"
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/Souhei/.oh-my-zsh
+# Use the package as a command
+# And accept glob patterns (e.g., brace, wildcard, ...)
+zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="mikeh"
+# Can manage everything e.g., other person's zshrc
+zplug "tcnksm/docker-alias", use:zshrc
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# Disable updates using the "frozen:" tag
+zplug "k4rthik/git-cal", as:command, frozen:1
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Grab binaries from GitHub Releases
+# and rename with the "rename-to:" tag
+zplug "junegunn/fzf-bin", \
+    from:gh-r, \
+    as:command, \
+    rename-to:fzf, \
+    use:"*darwin*amd64*"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Supports oh-my-zsh plugins and the like
+zplug "plugins/git",   from:oh-my-zsh, if:"(( $+commands[git] ))"
+zplug "themes/duellj", from:oh-my-zsh
+zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# Run a command after a plugin is installed/updated
+zplug "tj/n", hook-build:"make install"
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# Supports checking out a specific branch/tag/commit
+zplug "b4b4r07/enhancd", at:v1
+zplug "mollifier/anyframe", at:4c23cb60
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Install if "if:" tag returns true
+zplug "hchbaw/opp.zsh", if:"(( ${ZSH_VERSION%%.*} < 5 ))"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Can manage gist file just like other packages
+zplug "b4b4r07/79ee61f7c140c63d2786", \
+    from:gist, \
+    as:command, \
+    use:get_last_pane_path.sh
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# Support bitbucket
+zplug "b4b4r07/hello_bitbucket", \
+    from:bitbucket, \
+    as:command, \
+    hook-build:"chmod 755 *.sh", \
+    use:"*.sh"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Group dependencies. Load emoji-cli if jq is installed in this example
+zplug "stedolan/jq", \
+    from:gh-r, \
+    as:command, \
+    rename-to:jq
+zplug "b4b4r07/emoji-cli", \
+    on:"stedolan/jq"
+# Note: To specify the order in which packages should be loaded, use the nice
+#       tag described in the next section
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+# Set the priority when loading
+# e.g., zsh-syntax-highlighting must be loaded
+# after executing compinit command and sourcing other plugins
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# Can manage local plugins
+# zplug "~/.zsh", from:local
+# A relative path is resolved with respect to the $ZPLUG_HOME
+zplug "repos/robbyrussell/oh-my-zsh/custom/plugins/my-plugin", from:local
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH="Users/Souhei/bin:/opt/X11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Souhei/.local/bin"
-export PATH=$PATH:"/Users/Souhei/.pyenv/shims:/Users/Souhei/.pyenv/bin:/Users/Souhei/.rbenv/shims"
-export PATH=$PATH:"/usr/bin/ghc:/Users/Souhei/.cabal/bin:/usr/local/bin/gosh"
-export PATH=$PATH:"/Users/Souhei/.multirust/toolchains/stable/cargo/bin"
-export RUST_SRC_PATH=/Users/Souhei/tools/rustc-1.8.0/src
-
-# **env
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH=${PYENV_ROOT}/bin:$PATH
-eval "$(pyenv init -)"
-
-export RBENV_ROOT="${HOME}/.rbenv"
-export PATH=${RBENV_ROOT}/bin:$PATH
-eval "$(rbenv init -)"
-
-export BOOT_EMIT_TARGET=no
-
-export NVM_DIR="/Users/Souhei/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
-
-eval `opam config env`
-alias ocaml="rlwrap ocaml"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/Souhei/.sdkman"
-[[ -s "/Users/Souhei/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Souhei/.sdkman/bin/sdkman-init.sh"
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
