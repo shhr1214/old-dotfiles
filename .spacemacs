@@ -40,6 +40,7 @@ values."
      ocaml
      org
      pandoc
+     php
      python
      (ruby :valiables
            ruby-enable-enh-ruby-mode t
@@ -49,6 +50,7 @@ values."
             scala-auto-insert-asterisk-in-comments t)
      scheme
      (shell :variables
+            shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
      sql
@@ -115,9 +117,9 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         monokai
                          spacemacs-dark
                          spacemacs-light
-                         monokai
                          solarized-light
                          solarized-dark
                          zenburn
@@ -127,7 +129,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Ricty for Powerline"
+   dotspacemacs-default-font '("Ricty Discord for Powerline"
                                :size 14
                                :width normal
                                :weight normal
@@ -266,14 +268,20 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (set-language-environment "Japanese")
-  (setq initial-frame-alist
-        (append (list
-                 '(width . 120)
-                 '(height . 40))
-                initial-frame-alist))
+  (when window-system
+    (progn
+      (set-language-environment "Japanese")
+      (prefer-coding-system 'utf-8-unix)
+      (setq coding-system-for-read 'utf-8-unix)
+      (setq coding-system-for-write 'utf-8-unix)
+      (setq initial-frame-alist)))
+  (append (list
+           '(width . 120)
+           '(height . 40))
+          initial-frame-alist)
 
   (define-key evil-insert-state-map (kbd "C-h") (kbd "<DEL>"))
+  (define-key evil-hybrid-state-map (kbd "C-h") (kbd "<DEL>"))
   (global-set-key (kbd "<F1>") help-map)
 
   (setq-default xterm-mouse-mode 0)
@@ -300,7 +308,6 @@ layers configuration. You are free to put any user code."
   (define-key evil-insert-state-map (kbd "M-k") 'sp-backward-kill-sexp)
 
   (display-time-mode t)
-  (setq powerline-default-separator 'box)
 
   ;; javascript-mode
   (setq-default
@@ -312,6 +319,13 @@ layers configuration. You are free to put any user code."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
    )
+
+  ;; php-mode
+  (add-hook 'php-mode-hook
+            '(lambda ()
+               (setq tab-width 4)
+               (setq indent-tabs-mode t)
+               (setq c-basic-offset 4)))
 
   (setq org-bullets-bullet-list '("*" "**" "***" "****"))
   )
