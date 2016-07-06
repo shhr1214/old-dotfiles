@@ -1,3 +1,13 @@
+case ${OSTYPE} in
+  darwin*)
+    PATH=$PATH:/usr/local/bin
+    ;;
+  linux*)
+    ;;
+esac
+
+PATH=$PATH:/$HOME/src/bin
+
 # pyenv
 PYENV_ROOT=$HOME/.pyenv
 PATH=$PYENV_ROOT/bin:$PATH
